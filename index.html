@@ -1,0 +1,345 @@
+<title>开心旅游</title>
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<style>
+    /* 自定义深白色调的按钮样式 */
+    .deep-white-button {
+      background-color: #f0f0f0; /* 深白色背景 */
+      color: #333333; /* 深灰色文字 */
+      padding: 10px 20px; /* 内边距 */
+      border: 1px solid #cccccc; /* 浅灰色边框 */
+      border-radius: 4px; /* 圆角边框 */
+      cursor: pointer; /* 鼠标悬停时显示指针 */
+      font-size: 16px; /* 字体大小 */
+      text-align: center; /* 文字居中 */
+      display: inline-block; /* 使按钮内联显示 */
+      margin: 10px; /* 外边距 */
+      transition: background-color 0.3s; /* 平滑过渡效果 */
+    }
+
+    /* 鼠标悬停时的样式变化 */
+    .deep-white-button:hover {
+      background-color: #e0e0e0; /* 悬停时颜色稍微变深 */
+    }
+</style>
+</head>
+
+</html>
+<style>
+
+ .center-content {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 13.2vh; /* 使用视口高度使容器占满整个屏幕高度 */
+         font-size: 2.5em; 
+         text-align: center; /* 文本居中 */
+   }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="center-content">
+<img src="Screenshot_20240930_175634.jpg"/ width=400;>
+<script>
+function showGreeting() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var greeting;
+
+    if (hours < 6) {
+        greeting = "深夜好";
+    } else if (hours < 8) {
+        greeting = "早上好";
+    } else if (hours < 11) {
+        greeting = "上午好";
+    } else if (hours < 13) {
+        greeting = "中午好";
+    } else if (hours < 16) {
+        greeting = "下午好";
+    } else if (hours < 18) {
+        greeting = "傍晚好";
+    } else {
+        greeting = "晚上好";
+    }
+
+    // 将问候语显示在页面上
+    document.getElementById("greeting").innerText = greeting;
+}
+
+// 页面加载完成后执行
+window.onload = showGreeting;
+</script>
+</head>
+<body>
+<div id="greeting"></div>
+</body>
+</html>
+
+</div>
+<style>
+    .container {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 12vh; /* 使用视口高度使容器占满整个屏幕高度 */
+         font-size: 1.5em; 
+         text-align: center; /* 文本居中 */
+     }
+</style>
+</head>
+<body>
+
+<div class="container">
+     <div id="current-time">00:00:00</div>
+     <div id="current-date">2024年01月01日星期三</div>
+     </div>
+<style>
+
+  .button-container {
+
+    display: flex;
+
+    justify-content: center; /* 水平居中 */
+
+    align-items: center; /* 垂直居中，如果需要的话 */
+
+    height: 2vh; /* 视口高度，用于演示，实际使用时根据需要设置高度 */
+
+  }
+
+
+
+  .button-container button {
+
+    margin: 0 10px; /* 按钮之间的间距 */
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+  <div class="button-container">
+  <h3>其他功能:</h3>
+    <button class="deep-white-button"onclick="r()">日历
+    <button class="deep-white-button"onclick="re()">天气
+    <script>
+function r() {
+    window.location.href = "https://m.wannianli.tianqi.com/";
+}
+</script>
+<script>
+function re() {
+    window.location.href = "https://xw.tianqi.qq.com/";
+}
+</script>
+  </div>
+
+<script>
+     // 更新时间和日期的函数
+     function updateDateTime() {
+         var now = new Date(); // 获取当前时间
+         var hours = now.getHours().toString().padStart(2, '0'); // 获取小时，并确保是两位数
+         var minutes = now.getMinutes().toString().padStart(2, '0'); // 获取分钟，并确保是两位数
+         var seconds = now.getSeconds().toString().padStart(2, '0'); // 获取秒数，并确保是两位数
+         var year = now.getFullYear(); // 获取年份
+         var month = (now.getMonth() + 1).toString().padStart(2, '0'); // 获取月份，并确保是两位数
+         var day = now.getDate().toString().padStart(2, '0'); // 获取日期，并确保是两位数
+         var weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+         var weekDay = weekDays[now.getDay()]; // 获取星期几
+
+         // 设置时间显示格式
+         document.getElementById('current-time').textContent = hours + ':' + minutes + ':' + seconds;
+
+         // 设置日期显示格式
+         document.getElementById('current-date').textContent = year + '年' + month + '月' + day + '日 ' + weekDay;
+     }
+
+     // 每秒更新一次时间和日期
+     setInterval(updateDateTime, 1000);
+     // 初始化时间和日期
+     updateDateTime();
+</script>
+
+</body>
+</html>
+
+
+</head>
+
+
+
+</body>
+
+</html>
+<style>
+
+ .center-hsent {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 42vh; /* 使用视口高度使容器占满整个屏幕高度 */
+         font-size: 1.2em; 
+         text-align: center; /* 文本居中 */
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="center-hsent">
+<h3>你需要的功能:
+<button class="deep-white-button" onclick="hr()">旅游热榜</button>
+    <script>
+function hr() {
+    window.location.href = "旅游热榜.html";
+}
+</script>
+<button class="deep-white-button"onclick="ree()">地图(方便观察或去地方)</button>
+    <script>
+function ree() {
+    window.location.href = "地图选择.html";
+}
+</script>
+<button class="deep-white-button"onclick="ret()">Al询问(有什么旅游不懂的可以问Al)</button>
+    <script>
+function ret() {
+    window.location.href = "https://hailuoai.com/";
+}
+</script>
+<button class="deep-white-button"onclick="req()">开心旅游网盘(提供存储旅游的风景图片)</button>
+    <script>
+function req() {
+    window.location.href = "http://wertyu.ywzlidc.asia/";
+}
+</script>
+</div>
+<style>
+
+ .cener-hent {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 30vh; /* 使用视口高度使容器占满整个屏幕高度 */
+         font-size: 1.2em; 
+         text-align: center; /* 文本居中 */
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="cener-hent">
+    <h3>怎么把照片上传到网盘，
+和删除教学视频:↓</h3>
+<video width="340" height="400" controls>
+  <source src="7.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  您的浏览器不支持 HTML5 video 标签。
+</video>
+</video>
+</div>
+
+<style>
+
+  .centered-coiner {
+
+    display: flex; /* 启用Flexbox布局 */
+
+    justify-content: center; /* 水平居中 */
+
+    align-items: center; /* 垂直居中 */
+
+    height: 22vh; /* 使用视口高度，使容器占满整个屏幕高度 */
+font-size: 1.2em;
+    text-align: center; /* 文本居中 */
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="centered-coiner">
+<h3 style="color: red;">祝大家玩的开心😊,开车时请勿查看网站!!!!国庆快乐!!</h3 style="color: red;">
+
+
+  <!-- 你可以在这里放置任何你想要居中的内容 -->
+
+</div>
+
+
+
+</body>
+
+</html>
+<style>
+
+  .centered-contner {
+
+    display: flex; /* 启用Flexbox布局 */
+
+    justify-content: center; /* 水平居中 */
+
+    align-items: center; /* 垂直居中 */
+
+    height: 0vh; /* 使用视口高度，使容器占满整个屏幕高度 */
+
+    text-align: center; /* 文本居中 */
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="centered-contner">
+
+  <h3>开心旅游 @ 2024 高级功能:</h3>
+  <button onclick="r1e()">刷新界面</button>
+    <script>
+function r1e() {
+    window.location.href = "index.html";
+}
+</script>
+
+  <!-- 你可以在这里放置任何你想要居中的内容 -->
+
+</div>
+
+
+
+</body>
+
+</html>
